@@ -6,7 +6,9 @@
   "bin": {
     "brain-games": "dist/bin/brain-games.js"
   },
-  "dependencies": {},
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  },
   "devDependencies": {
     "@babel/cli": "^7.6.4",
     "@babel/core": "^7.6.4",
