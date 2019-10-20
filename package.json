@@ -2,9 +2,10 @@
   "name": "alex-first-project-lvl1",
   "version": "1.0.0",
   "description": "",
-  "main": "dist/brain-games.js",
+  "main": "dist/index.js",
   "bin": {
-    "brain-games": "dist/bin/brain-games.js"
+    "brain-games": "dist/bin/brain-games.js",
+    "brain-even": "dist/bin/brain-even.js"
   },
   "dependencies": {
     "readline-sync": "^1.4.10"
