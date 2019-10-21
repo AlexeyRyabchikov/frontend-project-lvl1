@@ -6,9 +6,9 @@ console.log(`Hello, ${greetUser}!`);
 
 const getNumber = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 const number = getNumber(1, 100);
-const isEval = getNumber(1, 100) % 2 === 0 ? 'yes' : 'no';
+const isEval = number % 2 === 0 ? 'yes' : 'no';
 
-export const answer = readlineSync.question(`Question: ${number}\nYour answer: `, {
+export const answer = readlineSync.question(`Question: ${getNumber(1, 100)}\nYour answer: `, {
   trueValue: [isEval === 'yes'],
   falseValue: [isEval === 'no'],
 });
