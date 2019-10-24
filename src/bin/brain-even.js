@@ -1,6 +1,4 @@
 #!/usr/bin/env node
-import { showRules, greetUser, answer } from '../brain-even-games';
+import playGame from '../games/even';
 
-console.log(showRules);
-console.log(greetUser);
-console.log(answer);
+playGame();
