@@ -2,3 +2,4 @@
 [![Test Coverage](https://api.codeclimate.com/v1/badges/2fa585c8e1302b831821/test_coverage)](https://codeclimate.com/github/AlexeyRyabchikov/frontend-project-lvl1/test_coverage)
 [![Build Status](https://travis-ci.org/AlexeyRyabchikov/frontend-project-lvl1.svg?branch=master)](https://travis-ci.org/AlexeyRyabchikov/frontend-project-lvl1)
 [![asciicast](https://asciinema.org/a/K9IAVIlChHJyHkw60wOUoBin3.svg)](https://asciinema.org/a/K9IAVIlChHJyHkw60wOUoBin3)
+[![asciicast](https://asciinema.org/a/UZJgbHR7DdOMXhMZ38sKnTvLx.svg)](https://asciinema.org/a/UZJgbHR7DdOMXhMZ38sKnTvLx)
