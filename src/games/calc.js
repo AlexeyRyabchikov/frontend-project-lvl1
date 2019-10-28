@@ -2,10 +2,11 @@ import { playGame, data } from '..';
 
 const rules = 'What is the result of the expression?';
 
+const getNumber1 = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+const getNumber2 = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+const getOperator = (text) => text.charAt(Math.random() * text.length);
+
 const answerNumber = () => {
-  const getNumber1 = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
-  const getNumber2 = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
-  const getOperator = (text) => text.charAt(Math.random() * text.length);
   const operator = getOperator('+-*');
   const num1 = getNumber1(1, 100);
   const num2 = getNumber2(1, 100);

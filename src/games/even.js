@@ -1,6 +1,6 @@
 import { playGame, data } from '..';
 
-export const rules = ('Answer "yes" if the number is even, otherwise answer "no".\n');
+const rules = 'Answer "yes" if the number is even, otherwise answer "no".\n';
 
 const isEval = (number) => number % 2 === 0;
 
