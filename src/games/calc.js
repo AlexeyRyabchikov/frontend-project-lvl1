@@ -14,13 +14,13 @@ const getCorrectAnswer = (operator, num1, num2) => {
   return result;
 };
 
-const answerNumber = () => {
+const answerQuestion = () => {
   const operator = getOperator('+-*');
   const num1 = getNumber1(1, 100);
   const num2 = getNumber2(1, 100);
-  const number = (`${num1} ${operator} ${num2}`);
+  const question = (`${num1} ${operator} ${num2}`);
   const correctAnswer = String(getCorrectAnswer(operator, num1, num2));
-  return data(correctAnswer, number);
+  return data(correctAnswer, question);
 };
 
-export default () => playGame(rules, answerNumber);
+export default () => playGame(rules, answerQuestion);

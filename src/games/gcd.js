@@ -10,12 +10,12 @@ const getCorrectAnswer = (num1, num2) => {
   return getCorrectAnswer(num2, num1 % num2);
 };
 
-const answerNumber = () => {
+const answerQuestion = () => {
   const num1 = getNumber1(1, 100);
   const num2 = getNumber2(1, 100);
-  const number = (`${num1} ${num2}`);
+  const question = (`${num1} ${num2}`);
   const correctAnswer = String(getCorrectAnswer(num1, num2));
-  return data(correctAnswer, number);
+  return data(correctAnswer, question);
 };
 
-export default () => playGame(rules, answerNumber);
+export default () => playGame(rules, answerQuestion);

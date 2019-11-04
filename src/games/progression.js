@@ -21,15 +21,15 @@ const getProgression = (firstNumber, step, n, xfactor) => {
   return result;
 };
 
-const answerNumber = () => {
+const answerQuestion = () => {
   const getNumber = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
   const firstNumber = getNumber(1, 100);
   const step = getNumber(1, 5);
   const n = 10;
   const xfactor = getNumber(1, n);
-  const number = getProgression(firstNumber, step, n, xfactor);
+  const question = getProgression(firstNumber, step, n, xfactor);
   const correctAnswer = String(nextNumber(firstNumber, step, xfactor));
-  return data(correctAnswer, number);
+  return data(correctAnswer, question);
 };
 
-export default () => playGame(rules, answerNumber);
+export default () => playGame(rules, answerQuestion);

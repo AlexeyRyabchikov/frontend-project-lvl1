@@ -1,7 +1,7 @@
 {
   "name": "alex-first-project-lvl1",
   "version": "1.1.0",
-  "description": "",
+  "description": "Brain games. Five games for brain",
   "main": "dist/index.js",
   "bin": {
     "brain-games": "dist/bin/brain-games.js",
@@ -38,7 +38,15 @@
     "type": "git",
     "url": "git+https://github.com/AlexeyRyabchikov/frontend-project-lvl1.git"
   },
-  "author": "alex",
+  "keywords": [
+    "Brain games",
+    "Brain even",
+    "Brain calc",
+    "Brain gcd",
+    "Brain progression",
+    "Brain prime"
+  ],
+  "author": "Alexey Ryabchikov",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/AlexeyRyabchikov/frontend-project-lvl1/issues"

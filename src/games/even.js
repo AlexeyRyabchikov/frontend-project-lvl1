@@ -2,13 +2,13 @@ import { playGame, data } from '..';
 
 const rules = 'Answer "yes" if the number is even, otherwise answer "no".\n';
 
-const isEval = (number) => number % 2 === 0;
+const isEval = (question) => question % 2 === 0;
 
-const answerNumber = () => {
+const answerQuestion = () => {
   const getNumber = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
-  const number = getNumber(1, 100);
-  const correctAnswer = isEval(number) ? 'yes' : 'no';
-  return data(correctAnswer, number);
+  const question = getNumber(1, 100);
+  const correctAnswer = isEval(question) ? 'yes' : 'no';
+  return data(correctAnswer, question);
 };
 
-export default () => playGame(rules, answerNumber);
+export default () => playGame(rules, answerQuestion);
