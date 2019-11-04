@@ -14,7 +14,7 @@ export const playGame = (rules, answerQuestion) => {
 
   const iter = (acc) => {
     const newData = answerQuestion();
-    const correctAnswer = getCorrectAnswer(data);
+    const correctAnswer = getCorrectAnswer(newData);
     const nextQuestion = getQuestion(newData);
     console.log(`Question: ${nextQuestion}`);
     const answer = readlineSync.question('Your answer: ');
