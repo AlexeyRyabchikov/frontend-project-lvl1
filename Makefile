@@ -7,4 +7,4 @@ publish:
 		npm publish --dry-run
 
 make lint:
-		eslint .
+		npx eslint .
