@@ -1,4 +1,5 @@
 import { playGame, data } from '..';
+import getNumber from '../generator';
 
 const rules = 'What number is missing in the progression?\n';
 
@@ -15,14 +16,13 @@ const getProgression = (firstNumber, step, n, xfactor) => {
     if (i === xfactor) {
       result += '.. ';
     } else {
-      result += `${nextNumber(firstNumber, step, i)} `;
+      result = `${result}${nextNumber(firstNumber, step, i)} `;
     }
   }
   return result;
 };
 
 const answerQuestion = () => {
-  const getNumber = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
   const firstNumber = getNumber(1, 100);
   const step = getNumber(1, 5);
   const n = 10;

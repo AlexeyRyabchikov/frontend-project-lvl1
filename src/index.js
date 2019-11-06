@@ -19,8 +19,8 @@ export const playGame = (rules, answerQuestion) => {
     console.log(`Question: ${nextQuestion}`);
     const answer = readlineSync.question('Your answer: ');
     if ((acc === 2) && (correctAnswer === answer)) return console.log(`Congratulations, ${name}!`);
-    if (correctAnswer !== answer) return console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${name}!`);
-    console.log('Correct!');
+    if (correctAnswer === answer) console.log('Correct!');
+    else return console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${name}!`);
     return iter(acc + 1);
   };
   return iter(0);
