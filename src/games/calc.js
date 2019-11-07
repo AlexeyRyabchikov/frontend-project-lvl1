@@ -3,19 +3,34 @@ import getNumber from '../generator';
 
 const rules = 'What is the result of the expression?';
 
-const getOperator = (text) => text.charAt(Math.random() * text.length);
-
 const getCorrectAnswer = (operator, num1, num2) => {
   let result = 0;
   switch (operator) {
-    case '+':
-      result = num1 + num2;
+    case 1:
+      result = `${num1 + num2}`;
       break;
-    case '-':
-      result = num1 - num2;
+    case 2:
+      result = `${num1 - num2}`;
       break;
-    case '*':
-      result = num1 * num2;
+    case 3:
+      result = `${num1 * num2}`;
+      break;
+    default:
+  }
+  return result;
+};
+
+const getOperator = (operator) => {
+  let result = 0;
+  switch (operator) {
+    case 1:
+      result = `+`;
+      break;
+    case 2:
+      result = `-`;
+      break;
+    case 3:
+      result = `*`;
       break;
     default:
   }
@@ -23,12 +38,11 @@ const getCorrectAnswer = (operator, num1, num2) => {
 };
 
 const answerQuestion = () => {
-  const operatorsList = '+-*';
-  const operator = getOperator(operatorsList);
+  const operator = getNumber(1, 3);
   const num1 = getNumber(1, 100);
   const num2 = getNumber(1, 100);
-  const question = (`${num1} ${operator} ${num2}`);
-  const correctAnswer = String(getCorrectAnswer(operator, num1, num2));
+  const question = (`${num1} ${getOperator(operator)} ${num2}`);
+  const correctAnswer = getCorrectAnswer(operator, num1, num2);
   return data(correctAnswer, question);
 };
 

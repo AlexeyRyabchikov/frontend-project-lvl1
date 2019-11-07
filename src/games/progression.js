@@ -7,7 +7,7 @@ const nextNumber = (firstNumber, step, n) => {
   if (n > 1) {
     return firstNumber + step * (n - 1);
   }
-  return firstNumber;
+  return `${firstNumber}`;
 };
 
 const getProgression = (firstNumber, step, n, xfactor) => {
@@ -28,7 +28,7 @@ const answerQuestion = () => {
   const n = 10;
   const xfactor = getNumber(1, n);
   const question = getProgression(firstNumber, step, n, xfactor);
-  const correctAnswer = String(nextNumber(firstNumber, step, xfactor));
+  const correctAnswer = nextNumber(firstNumber, step, xfactor);
   return data(correctAnswer, question);
 };
 
