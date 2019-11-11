@@ -1,19 +1,19 @@
-import { playGame, data } from '..';
+import { playGame, createDataPair } from '..';
 import getNumber from '../generator';
 
-const rules = 'Find the greatest common divisor of given numbers.';
+const description = 'Find the greatest common divisor of given numbers.';
 
-const getCorrectAnswer = (num1, num2) => {
-  if (num2 === 0) return num1;
-  return getCorrectAnswer(num2, num1 % num2);
+const getGcd = (start, end) => {
+  if (end === 0) return start;
+  return getGcd(start, start % end);
 };
 
-const answerQuestion = () => {
-  const num1 = getNumber(1, 100);
-  const num2 = getNumber(1, 100);
-  const question = (`${num1} ${num2}`);
-  const correctAnswer = String(getCorrectAnswer(num1, num2));
-  return data(correctAnswer, question);
+const getAnswerQuestion = () => {
+  const start = getNumber(1, 100);
+  const end = getNumber(1, 100);
+  const question = (`${start} ${end}`);
+  const correctAnswer = String(getGcd(start, end));
+  return createDataPair(correctAnswer, question);
 };
 
-export default () => playGame(rules, answerQuestion);
+export default () => playGame(description, getAnswerQuestion);

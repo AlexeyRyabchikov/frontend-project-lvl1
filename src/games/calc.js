@@ -1,19 +1,19 @@
-import { playGame, data } from '..';
+import { playGame, createDataPair } from '..';
 import getNumber from '../generator';
 
-const rules = 'What is the result of the expression?';
+const description = 'What is the result of the expression?';
 
-const getCorrectAnswer = (operator, num1, num2) => {
+const count = (operator, start, end) => {
   let result = 0;
   switch (operator) {
     case 1:
-      result = `${num1 + num2}`;
+      result = `${start + end}`;
       break;
     case 2:
-      result = `${num1 - num2}`;
+      result = `${start - end}`;
       break;
     case 3:
-      result = `${num1 * num2}`;
+      result = `${start * end}`;
       break;
     default:
   }
@@ -37,13 +37,13 @@ const getOperator = (operator) => {
   return result;
 };
 
-const answerQuestion = () => {
+const getAnswerQuestion = () => {
   const operator = getNumber(1, 3);
-  const num1 = getNumber(1, 100);
-  const num2 = getNumber(1, 100);
-  const question = (`${num1} ${getOperator(operator)} ${num2}`);
-  const correctAnswer = getCorrectAnswer(operator, num1, num2);
-  return data(correctAnswer, question);
+  const start = getNumber(1, 100);
+  const end = getNumber(1, 100);
+  const question = (`${start} ${getOperator(operator)} ${end}`);
+  const correctAnswer = count(operator, start, end);
+  return createDataPair(correctAnswer, question);
 };
 
-export default () => playGame(rules, answerQuestion);
+export default () => playGame(description, getAnswerQuestion);

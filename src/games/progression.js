@@ -1,35 +1,35 @@
-import { playGame, data } from '..';
+import { playGame, createDataPair } from '..';
 import getNumber from '../generator';
 
-const rules = 'What number is missing in the progression?\n';
+const description = 'What number is missing in the progression?\n';
 
-const nextNumber = (firstNumber, step, n) => {
-  if (n > 1) {
-    return firstNumber + step * (n - 1);
+const getProgressionMember = (start, step, counter) => {
+  if (counter > 1) {
+    return start + step * (counter - 1);
   }
-  return `${firstNumber}`;
+  return start;
 };
 
-const getProgression = (firstNumber, step, n, xfactor) => {
+const getProgression = (start, step, counter, xfactor) => {
   let result = '';
-  for (let i = 1; i <= n; i += 1) {
+  for (let i = 1; i <= counter; i += 1) {
     if (i === xfactor) {
-      result += '.. ';
+      result = `${result}${'.. '}`;
     } else {
-      result = `${result}${nextNumber(firstNumber, step, i)} `;
+      result = `${result}${getProgressionMember(start, step, i)} `;
     }
   }
   return result;
 };
 
-const answerQuestion = () => {
-  const firstNumber = getNumber(1, 100);
+const getAnswerQuestion = () => {
+  const start = getNumber(1, 100);
   const step = getNumber(1, 5);
-  const n = 10;
-  const xfactor = getNumber(1, n);
-  const question = getProgression(firstNumber, step, n, xfactor);
-  const correctAnswer = nextNumber(firstNumber, step, xfactor);
-  return data(correctAnswer, question);
+  const counter = 10;
+  const xfactor = getNumber(1, counter);
+  const question = getProgression(start, step, counter, xfactor);
+  const correctAnswer = String(getProgressionMember(start, step, xfactor));
+  return createDataPair(correctAnswer, question);
 };
 
-export default () => playGame(rules, answerQuestion);
+export default () => playGame(description, getAnswerQuestion);

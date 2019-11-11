@@ -1,7 +1,7 @@
-import { playGame, data } from '..';
+import { playGame, createDataPair } from '..';
 import getNumber from '../generator';
 
-const rules = 'Answer "yes" if given number is prime. Otherwise answer "no".\n';
+const description = 'Answer "yes" if given number is prime. Otherwise answer "no".\n';
 
 const isPrime = (question) => {
   let result = Boolean;
@@ -12,10 +12,10 @@ const isPrime = (question) => {
   return result;
 };
 
-const answerQuestion = () => {
+const getAnswerQuestion = () => {
   const question = getNumber(1, 1000);
   const correctAnswer = isPrime(question) ? 'yes' : 'no';
-  return data(correctAnswer, question);
+  return createDataPair(correctAnswer, question);
 };
 
-export default () => playGame(rules, answerQuestion);
+export default () => playGame(description, getAnswerQuestion);
