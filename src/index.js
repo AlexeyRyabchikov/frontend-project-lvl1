@@ -5,10 +5,9 @@ export const createDataPair = (correctAnswer, question) => cons(correctAnswer, q
 const getCorrectAnswer = (point) => car(point);
 const getQuestion = (point) => cdr(point);
 
-export const playGame = (description, getAnswerQuestion) => {
+export const playGame = (describe, getAnswerQuestion) => {
   console.log('Welcome to the Brain Games!');
-  console.log(description);
-  console.log();
+  describe();
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}!\n`);
 

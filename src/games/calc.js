@@ -1,7 +1,10 @@
 import { playGame, createDataPair } from '..';
 import getNumber from '../generator';
 
-const description = 'What is the result of the expression?';
+const describe = () => {
+  const description = 'What is the result of the expression?\n';
+  console.log(description);
+};
 
 const count = (operator, start, end) => {
   let result = 0;
@@ -46,4 +49,4 @@ const getAnswerQuestion = () => {
   return createDataPair(correctAnswer, question);
 };
 
-export default () => playGame(description, getAnswerQuestion);
+export default () => playGame(describe, getAnswerQuestion);

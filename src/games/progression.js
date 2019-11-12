@@ -1,7 +1,10 @@
 import { playGame, createDataPair } from '..';
 import getNumber from '../generator';
 
-const description = 'What number is missing in the progression?\n';
+const describe = () => {
+  const description = 'What number is missing in the progression?\n';
+  console.log(description);
+};
 
 const getProgressionMember = (start, step, counter) => {
   if (counter > 1) {
@@ -32,4 +35,4 @@ const getAnswerQuestion = () => {
   return createDataPair(correctAnswer, question);
 };
 
-export default () => playGame(description, getAnswerQuestion);
+export default () => playGame(describe, getAnswerQuestion);
