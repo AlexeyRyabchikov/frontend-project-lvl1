@@ -5,13 +5,13 @@ export const createDataPair = (correctAnswer, question) => cons(correctAnswer, q
 const getCorrectAnswer = (point) => car(point);
 const getQuestion = (point) => cdr(point);
 
-export const playGame = (describe, getAnswerQuestion) => {
+export const playGame = (description, getAnswerQuestion) => {
   console.log('Welcome to the Brain Games!');
-  describe();
+  if (description) console.log(description);
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}!\n`);
 
-  const repeat = (acc) => {
+  const iter = (acc) => {
     const updateCreateDataPair = getAnswerQuestion();
     const correctAnswer = getCorrectAnswer(updateCreateDataPair);
     const nextQuestion = getQuestion(updateCreateDataPair);
@@ -22,7 +22,7 @@ export const playGame = (describe, getAnswerQuestion) => {
     } if (correctAnswer === answer) console.log('Correct!');
     if (correctAnswer !== answer) {
       return console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${name}!`);
-    } return repeat(acc + 1);
+    } return iter(acc + 1);
   };
-  return repeat(0);
+  return iter(0);
 };
