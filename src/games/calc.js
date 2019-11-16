@@ -4,10 +4,11 @@ import getNumber from '../generator';
 const description = 'What is the result of the expression?\n';
 
 const getAnswerQuestion = () => {
-  const operatorList = ('+', '-', '*');
+  const operatorList = ('+-*');
   const operator = operatorList[getNumber(operatorList.length)];
-  const first = getNumber(100);
-  const end = getNumber(100);
+  const maxNumberForGetNumber = 100;
+  const first = getNumber(maxNumberForGetNumber);
+  const end = getNumber(maxNumberForGetNumber);
   const question = (`${first} ${operator} ${end}`);
   let correctAnswer = 0;
   switch (operator) {

@@ -23,7 +23,8 @@ const getProgression = (first, step, counter, xfactor) => {
 };
 
 const getAnswerQuestion = () => {
-  const first = getNumber(100);
+  const maxNumberForGetNumber = 100;
+  const first = getNumber(maxNumberForGetNumber);
   const step = getNumber(5);
   const counter = 10;
   const xfactor = getNumber(1, counter);

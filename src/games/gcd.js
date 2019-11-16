@@ -9,8 +9,9 @@ const getGcd = (first, end) => {
 };
 
 const getAnswerQuestion = () => {
-  const first = getNumber(100);
-  const end = getNumber(100);
+  const maxNumberForGetNumber = 100;
+  const first = getNumber(maxNumberForGetNumber);
+  const end = getNumber(maxNumberForGetNumber);
   const question = (`${first} ${end}`);
   const correctAnswer = String(getGcd(first, end));
   return createDataPair(correctAnswer, question);
