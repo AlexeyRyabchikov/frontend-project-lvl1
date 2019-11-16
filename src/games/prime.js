@@ -1,5 +1,5 @@
 import { playGame, createDataPair } from '..';
-import getNumber from '../generator';
+import getDigit from '../generator';
 
 const description = 'Answer "yes" if given number is prime. Otherwise answer "no".\n';
 
@@ -14,7 +14,7 @@ const isPrime = (question) => {
 
 const getAnswerQuestion = () => {
   const maxNumberForGetNumber = 100;
-  const question = getNumber(maxNumberForGetNumber);
+  const question = getDigit(maxNumberForGetNumber);
   const correctAnswer = isPrime(question) ? 'yes' : 'no';
   return createDataPair(correctAnswer, question);
 };

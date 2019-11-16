@@ -1,5 +1,5 @@
 import { playGame, createDataPair } from '..';
-import getNumber from '../generator';
+import getDigit from '../generator';
 
 const description = 'What number is missing in the progression?\n';
 
@@ -24,10 +24,10 @@ const getProgression = (first, step, counter, xfactor) => {
 
 const getAnswerQuestion = () => {
   const maxNumberForGetNumber = 100;
-  const first = getNumber(maxNumberForGetNumber);
-  const step = getNumber(5);
+  const first = getDigit(maxNumberForGetNumber);
+  const step = getDigit(5);
   const counter = 10;
-  const xfactor = getNumber(1, counter);
+  const xfactor = getDigit(counter);
   const question = getProgression(first, step, counter, xfactor);
   const correctAnswer = String(getProgressionMember(first, step, xfactor));
   return createDataPair(correctAnswer, question);

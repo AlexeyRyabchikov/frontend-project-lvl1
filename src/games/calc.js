@@ -1,14 +1,14 @@
 import { playGame, createDataPair } from '..';
-import getNumber from '../generator';
+import getDigit from '../generator';
 
 const description = 'What is the result of the expression?\n';
 
 const getAnswerQuestion = () => {
   const operatorList = ('+-*');
-  const operator = operatorList[getNumber(operatorList.length)];
+  const operator = operatorList[getDigit(operatorList.length)];
   const maxNumberForGetNumber = 100;
-  const first = getNumber(maxNumberForGetNumber);
-  const end = getNumber(maxNumberForGetNumber);
+  const first = getDigit(maxNumberForGetNumber);
+  const end = getDigit(maxNumberForGetNumber);
   const question = (`${first} ${operator} ${end}`);
   let correctAnswer = 0;
   switch (operator) {

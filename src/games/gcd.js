@@ -1,5 +1,5 @@
 import { playGame, createDataPair } from '..';
-import getNumber from '../generator';
+import getDigit from '../generator';
 
 const description = 'Find the greatest common divisor of given numbers.\n'
 
@@ -10,8 +10,8 @@ const getGcd = (first, end) => {
 
 const getAnswerQuestion = () => {
   const maxNumberForGetNumber = 100;
-  const first = getNumber(maxNumberForGetNumber);
-  const end = getNumber(maxNumberForGetNumber);
+  const first = getDigit(maxNumberForGetNumber);
+  const end = getDigit(maxNumberForGetNumber);
   const question = (`${first} ${end}`);
   const correctAnswer = String(getGcd(first, end));
   return createDataPair(correctAnswer, question);
