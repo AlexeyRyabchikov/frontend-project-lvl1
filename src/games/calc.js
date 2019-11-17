@@ -5,7 +5,7 @@ const description = 'What is the result of the expression?\n';
 
 const getAnswerQuestion = () => {
   const operatorList = ('+-*');
-  const operator = operatorList[getDigit(operatorList.length)];
+  const operator = operatorList[getDigit(operatorList.length - 1)];
   const maxNumberForGetDigit = 100;
   const first = getDigit(maxNumberForGetDigit);
   const end = getDigit(maxNumberForGetDigit);
