@@ -6,9 +6,9 @@ const description = 'What is the result of the expression?\n';
 const getAnswerQuestion = () => {
   const operatorList = ('+-*');
   const operator = operatorList[getDigit(operatorList.length)];
-  const maxNumberForGetNumber = 100;
-  const first = getDigit(maxNumberForGetNumber);
-  const end = getDigit(maxNumberForGetNumber);
+  const maxNumberForGetDigit = 100;
+  const first = getDigit(maxNumberForGetDigit);
+  const end = getDigit(maxNumberForGetDigit);
   const question = (`${first} ${operator} ${end}`);
   let correctAnswer = 0;
   switch (operator) {

@@ -13,8 +13,8 @@ const isPrime = (question) => {
 };
 
 const getAnswerQuestion = () => {
-  const maxNumberForGetNumber = 100;
-  const question = getDigit(maxNumberForGetNumber);
+  const maxNumberForGetDigit = 100;
+  const question = getDigit(maxNumberForGetDigit);
   const correctAnswer = isPrime(question) ? 'yes' : 'no';
   return createDataPair(correctAnswer, question);
 };

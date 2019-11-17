@@ -6,8 +6,8 @@ const description = 'Answer "yes" if the number is even, otherwise answer "no".\
 const isEven = (question) => question % 2 === 0;
 
 const getAnswerQuestion = () => {
-  const maxNumberForGetNumber = 100;
-  const question = getDigit(maxNumberForGetNumber);
+  const maxNumberForGetDigit = 100;
+  const question = getDigit(maxNumberForGetDigit);
   const correctAnswer = isEven(question) ? 'yes' : 'no';
   return createDataPair(correctAnswer, question);
 };
