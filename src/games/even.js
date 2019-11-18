@@ -1,7 +1,7 @@
 import { playGame, createDataPair } from '..';
 import getDigit from '../generator';
 
-const description = 'Answer "yes" if the number is even, otherwise answer "no".\n';
+const description = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 const isEven = (question) => question % 2 === 0;
 

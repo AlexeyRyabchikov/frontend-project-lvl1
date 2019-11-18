@@ -1,7 +1,7 @@
 import { playGame, createDataPair } from '..';
 import getDigit from '../generator';
 
-const description = 'What number is missing in the progression?\n';
+const description = 'What number is missing in the progression?';
 
 const getProgressionMember = (first, step, counter) => {
   if (counter > 1) {

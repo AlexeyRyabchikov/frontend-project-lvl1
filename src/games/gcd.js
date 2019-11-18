@@ -1,7 +1,7 @@
 import { playGame, createDataPair } from '..';
 import getDigit from '../generator';
 
-const description = 'Find the greatest common divisor of given numbers.\n'
+const description = 'Find the greatest common divisor of given numbers.'
 
 const getGcd = (first, end) => {
   if (end === 0) return first;

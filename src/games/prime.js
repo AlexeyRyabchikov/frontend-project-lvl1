@@ -1,7 +1,7 @@
 import { playGame, createDataPair } from '..';
 import getDigit from '../generator';
 
-const description = 'Answer "yes" if given number is prime. Otherwise answer "no".\n';
+const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const isPrime = (question) => {
   let result = Boolean;

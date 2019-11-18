@@ -7,7 +7,8 @@ const getQuestion = (point) => cdr(point);
 
 export const playGame = (description, getAnswerQuestion) => {
   console.log('Welcome to the Brain Games!');
-  if (description) console.log(description);
+  console.log(description);
+  console.log();
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}!\n`);
 

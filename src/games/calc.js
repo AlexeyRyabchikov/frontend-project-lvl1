@@ -1,7 +1,7 @@
 import { playGame, createDataPair } from '..';
 import getDigit from '../generator';
 
-const description = 'What is the result of the expression?\n';
+const description = 'What is the result of the expression?';
 
 const getAnswerQuestion = () => {
   const operatorList = ('+-*');
