@@ -1,20 +1,22 @@
-import { playGame, createDataPair } from '..';
+import { playGame } from '..';
 import getDigit from '../generator';
+import { cons } from '@hexlet/pairs';
 
 const description = 'Find the greatest common divisor of given numbers.'
+const maxNumberForGetDigit = 100;
+const minNumberForGetDigit = 0;
 
-const getGcd = (first, end) => {
-  if (end === 0) return first;
-  return getGcd(end, first % end);
+const getGcd = (first, last) => {
+  if (last === 0) return first;
+  return getGcd(last, first % last);
 };
 
 const getAnswerQuestion = () => {
-  const maxNumberForGetDigit = 100;
-  const first = getDigit(maxNumberForGetDigit);
-  const end = getDigit(maxNumberForGetDigit);
-  const question = (`${first} ${end}`);
-  const correctAnswer = String(getGcd(first, end));
-  return createDataPair(correctAnswer, question);
+  const first = getDigit(maxNumberForGetDigit, minNumberForGetDigit);
+  const last = getDigit(maxNumberForGetDigit, minNumberForGetDigit);
+  const question = (`${first} ${last}`);
+  const correctAnswer = String(getGcd(first, last));
+  return cons(correctAnswer, question);
 };
 
 export default () => playGame(description, getAnswerQuestion);

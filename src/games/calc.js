@@ -1,32 +1,35 @@
-import { playGame, createDataPair } from '..';
+import { playGame } from '..';
 import getDigit from '../generator';
+import { cons } from '@hexlet/pairs';
 
 const description = 'What is the result of the expression?';
 
+const operatorList = ('+-*');
+const maxNumberForGetDigit = 100;
+const minNumberForGetDigit = 0;
+
 const getAnswerQuestion = () => {
-  const operatorList = ('+-*');
   const operator = operatorList[getDigit(operatorList.length - 1)];
-  const maxNumberForGetDigit = 100;
-  const first = getDigit(maxNumberForGetDigit);
-  const end = getDigit(maxNumberForGetDigit);
-  const question = (`${first} ${operator} ${end}`);
-  let correctAnswer = 0;
+  const first = getDigit(maxNumberForGetDigit, minNumberForGetDigit);
+  const last = getDigit(maxNumberForGetDigit, minNumberForGetDigit);
+  const question = (`${first} ${operator} ${last}`);
+  let correctAnswer;
   switch (operator) {
     case '+': {
-     correctAnswer = first + end;
+     correctAnswer = first + last;
      break;
     }
     case '-': {
-      correctAnswer = first - end;
+      correctAnswer = first - last;
      break;
     }
     case '*': {
-      correctAnswer = first * end;
+      correctAnswer = first * last;
      break;
     }
     default:
 }
-return createDataPair(`${correctAnswer}`, question);
+return cons(correctAnswer.toString(), question);
 };
 
 export default () => playGame(description, getAnswerQuestion);

@@ -1,7 +1,15 @@
-import { playGame, createDataPair } from '..';
+import { playGame } from '..';
 import getDigit from '../generator';
+import { cons } from '@hexlet/pairs';
 
 const description = 'What number is missing in the progression?';
+
+const maxNumberForGetDigit = 100;
+const minNumberForGetDigit = 0;
+const maxNumberForStep = 5;
+const minNumberForStep = 1;
+const minNumberForXfactor = 1;
+const maxNumberForXfactor = 10;
 
 const getProgressionMember = (first, step, counter) => {
   if (counter > 1) {
@@ -10,7 +18,7 @@ const getProgressionMember = (first, step, counter) => {
   return first;
 };
 
-const getProgression = (first, step, counter, xfactor) => {
+const getQuestion = (first, step, counter, xfactor) => {
   let result = '';
   for (let i = 1; i <= counter; i += 1) {
     if (i === xfactor) {
@@ -23,14 +31,13 @@ const getProgression = (first, step, counter, xfactor) => {
 };
 
 const getAnswerQuestion = () => {
-  const maxNumberForGetDigit = 100;
-  const first = getDigit(maxNumberForGetDigit);
-  const step = getDigit(5);
+  const first = getDigit(maxNumberForGetDigit, minNumberForGetDigit);
+  const step = getDigit(maxNumberForStep, minNumberForStep);
   const counter = 10;
-  const xfactor = getDigit(counter);
-  const question = getProgression(first, step, counter, xfactor);
+  const xfactor = getDigit(maxNumberForXfactor, minNumberForXfactor);
+  const question = getQuestion(first, step, counter, xfactor);
   const correctAnswer = String(getProgressionMember(first, step, xfactor));
-  return createDataPair(correctAnswer, question);
+  return cons(correctAnswer, question);
 };
 
 export default () => playGame(description, getAnswerQuestion);
