@@ -1,9 +1,7 @@
 import readlineSync from 'readline-sync';
 import { car, cdr } from '@hexlet/pairs';
 
-export const playGame = (description, getAnswerQuestion) => {
-
-  
+export default (description, getAnswerQuestion) => {
   console.log('Welcome to the Brain Games!');
   console.log(description);
   console.log();
@@ -19,7 +17,6 @@ export const playGame = (description, getAnswerQuestion) => {
 
     console.log(`Question: ${nextQuestion}`);
     const answer = readlineSync.question('Your answer: ');
-    
     if (correctAnswer !== answer) return console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${name}!`);
     console.log('Correct!');
     return iter(acc + 1);

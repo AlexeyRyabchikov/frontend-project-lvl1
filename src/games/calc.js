@@ -1,7 +1,6 @@
 import { cons } from '@hexlet/pairs';
-import { playGame } from '..';
+import playGame from '..';
 import getDigit from '../generator';
-
 
 const description = 'What is the result of the expression?';
 
