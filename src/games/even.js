@@ -1,6 +1,7 @@
+import { cons } from '@hexlet/pairs';
 import { playGame } from '..';
 import getDigit from '../generator';
-import { cons } from '@hexlet/pairs';
+
 
 const description = 'Answer "yes" if the number is even, otherwise answer "no".';
 const maxNumberForGetDigit = 100;

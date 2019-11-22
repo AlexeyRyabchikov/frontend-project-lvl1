@@ -1,8 +1,8 @@
+import { cons } from '@hexlet/pairs';
 import { playGame } from '..';
 import getDigit from '../generator';
-import { cons } from '@hexlet/pairs';
 
-const description = 'Find the greatest common divisor of given numbers.'
+const description = 'Find the greatest common divisor of given numbers.';
 const maxNumberForGetDigit = 100;
 const minNumberForGetDigit = 0;
 

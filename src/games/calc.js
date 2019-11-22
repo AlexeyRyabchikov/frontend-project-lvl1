@@ -1,6 +1,7 @@
+import { cons } from '@hexlet/pairs';
 import { playGame } from '..';
 import getDigit from '../generator';
-import { cons } from '@hexlet/pairs';
+
 
 const description = 'What is the result of the expression?';
 
@@ -16,20 +17,20 @@ const getAnswerQuestion = () => {
   let correctAnswer;
   switch (operator) {
     case '+': {
-     correctAnswer = first + last;
-     break;
+      correctAnswer = first + last;
+      break;
     }
     case '-': {
       correctAnswer = first - last;
-     break;
+      break;
     }
     case '*': {
       correctAnswer = first * last;
-     break;
+      break;
     }
     default:
-}
-return cons(correctAnswer.toString(), question);
+  }
+  return cons(correctAnswer.toString(), question);
 };
 
 export default () => playGame(description, getAnswerQuestion);

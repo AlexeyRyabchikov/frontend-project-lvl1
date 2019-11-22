@@ -1,6 +1,6 @@
+import { cons } from '@hexlet/pairs';
 import { playGame } from '..';
 import getDigit from '../generator';
-import { cons } from '@hexlet/pairs';
 
 const description = 'What number is missing in the progression?';
 
