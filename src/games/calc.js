@@ -1,18 +1,20 @@
 import { cons } from '@hexlet/pairs';
 import playGame from '..';
-import getDigit from '../generator';
+import generateRandom from '../generator';
 
 const description = 'What is the result of the expression?';
 
-const operatorList = ('+-*');
-const maxNumberForGetDigit = 100;
-const minNumberForGetDigit = 0;
+const operators = ('+-*');
+const maxDigitForGenerateRandom = 100;
+const minDigitForGenerateRandom = 0;
+const minDigitForOperator = 0;
+const maxDigitForOperator = operators.length - 1;
 
 const getAnswerQuestion = () => {
-  const operator = operatorList[getDigit(operatorList.length - 1)];
-  const first = getDigit(maxNumberForGetDigit, minNumberForGetDigit);
-  const last = getDigit(maxNumberForGetDigit, minNumberForGetDigit);
-  const question = (`${first} ${operator} ${last}`);
+  const operator = operators[generateRandom(minDigitForOperator, maxDigitForOperator)];
+  const first = generateRandom(minDigitForGenerateRandom, maxDigitForGenerateRandom);
+  const last = generateRandom(minDigitForGenerateRandom, maxDigitForGenerateRandom);
+  const question = `${first} ${operator} ${last}`;
   let correctAnswer;
   switch (operator) {
     case '+': {

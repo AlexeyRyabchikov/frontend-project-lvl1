@@ -1,10 +1,10 @@
 import { cons } from '@hexlet/pairs';
 import playGame from '..';
-import getDigit from '../generator';
+import generateRandom from '../generator';
 
 const description = 'Find the greatest common divisor of given numbers.';
-const maxNumberForGetDigit = 100;
-const minNumberForGetDigit = 0;
+const maxDigitForGenerateRandom = 100;
+const minDigitForGenerateRandom = 0;
 
 const getGcd = (first, last) => {
   if (last === 0) return first;
@@ -12,9 +12,9 @@ const getGcd = (first, last) => {
 };
 
 const getAnswerQuestion = () => {
-  const first = getDigit(maxNumberForGetDigit, minNumberForGetDigit);
-  const last = getDigit(maxNumberForGetDigit, minNumberForGetDigit);
-  const question = (`${first} ${last}`);
+  const first = generateRandom(minDigitForGenerateRandom, maxDigitForGenerateRandom);
+  const last = generateRandom(minDigitForGenerateRandom, maxDigitForGenerateRandom);
+  const question = `${first} ${last}`;
   const correctAnswer = String(getGcd(first, last));
   return cons(correctAnswer, question);
 };

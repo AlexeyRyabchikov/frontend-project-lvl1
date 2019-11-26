@@ -1,42 +1,33 @@
 import { cons } from '@hexlet/pairs';
 import playGame from '..';
-import getDigit from '../generator';
+import generateRandom from '../generator';
 
 const description = 'What number is missing in the progression?';
 
-const maxNumberForGetDigit = 100;
-const minNumberForGetDigit = 0;
-const maxNumberForStep = 5;
-const minNumberForStep = 1;
-const minNumberForXfactor = 1;
-const maxNumberForXfactor = 10;
+const maxDigitForGenerateRandom = 100;
+const minDigitForGenerateRandom = 0;
+const maxDigitForStep = 5;
+const minDigitForStep = 1;
+const minDigitForHiddenElement = 0;
+const maxDigitForHiddenElement = 9;
+const progressionLength = 9;
 
-const getProgressionMember = (first, step, counter) => {
-  if (counter > 1) {
-    return first + step * (counter - 1);
-  }
-  return first;
-};
-
-const getQuestion = (first, step, counter, xfactor) => {
+const getQuestion = (first, step, counter, hiddenElement) => {
   let result = '';
-  for (let i = 1; i <= counter; i += 1) {
-    if (i === xfactor) {
-      result = `${result}${'.. '}`;
-    } else {
-      result = `${result}${getProgressionMember(first, step, i)} `;
-    }
+  for (let i = 0; i <= counter; i += 1) {
+    if (first === 0) result = `${first}`;
+    if (i === hiddenElement) result = `${result}${'.. '}`;
+    else result = `${result}${first + step * (i - 1)} `;
   }
   return result;
 };
 
 const getAnswerQuestion = () => {
-  const first = getDigit(maxNumberForGetDigit, minNumberForGetDigit);
-  const step = getDigit(maxNumberForStep, minNumberForStep);
-  const counter = 10;
-  const xfactor = getDigit(maxNumberForXfactor, minNumberForXfactor);
-  const question = getQuestion(first, step, counter, xfactor);
-  const correctAnswer = String(getProgressionMember(first, step, xfactor));
+  const first = generateRandom(minDigitForGenerateRandom, maxDigitForGenerateRandom);
+  const step = generateRandom(minDigitForStep, maxDigitForStep);
+  const hiddenElement = generateRandom(minDigitForHiddenElement, maxDigitForHiddenElement);
+  const question = getQuestion(first, step, progressionLength, hiddenElement);
+  const correctAnswer = String(first + step * (hiddenElement - 1));
   return cons(correctAnswer, question);
 };
 
