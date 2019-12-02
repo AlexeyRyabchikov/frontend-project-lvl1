@@ -7,8 +7,8 @@ const maxDigitForGenerateRandom = 100;
 const minDigitForGenerateRandom = 0;
 const maxDigitForStep = 5;
 const minDigitForStep = 1;
-const minDigitForHiddenElement = 0;
-const maxDigitForHiddenElement = 9;
+const minDigitForHiddenElementIndex = 0;
+const maxDigitForHiddenElementIndex = 9;
 const progressionLength = 9;
 const getQuestion = (first, step, counter, hiddenElementIndex) => {
   let result = '';
@@ -22,7 +22,7 @@ const getQuestion = (first, step, counter, hiddenElementIndex) => {
 const getAnswerQuestion = () => {
   const first = generateRandom(minDigitForGenerateRandom, maxDigitForGenerateRandom);
   const step = generateRandom(minDigitForStep, maxDigitForStep);
-  const hiddenElementIndex = generateRandom(minDigitForHiddenElement, maxDigitForHiddenElement);
+  const hiddenElementIndex = generateRandom(minDigitForHiddenElementIndex, maxDigitForHiddenElementIndex);
   const question = getQuestion(first, step, progressionLength, hiddenElementIndex);
   const correctAnswer = String(first + step * (hiddenElementIndex - 1));
   return cons(correctAnswer, question);
