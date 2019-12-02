@@ -9,15 +9,21 @@ export default (description, getAnswerQuestion) => {
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}!\n`);
   const iter = (counter) => {
-    if (counter === questionsCount) return console.log(`Congratulations, ${name}!`);
+    if (counter === questionsCount) {
+      console.log(`Congratulations, ${name}!`);
+      return;
+    }
     const dataGame = getAnswerQuestion();
     const correctAnswer = car(dataGame);
     const nextQuestion = cdr(dataGame);
     console.log(`Question: ${nextQuestion}`);
     const answer = readlineSync.question('Your answer: ');
-    if (correctAnswer !== answer) return console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${name}!`);
+    if (correctAnswer !== answer) {
+      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${name}!`);
+      return;
+    }
     console.log('Correct!');
-    return iter(counter + 1);
+    iter(counter + 1);
   };
   return iter(0);
 };
