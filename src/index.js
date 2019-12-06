@@ -19,7 +19,8 @@ export default (description, getAnswerQuestion) => {
     console.log(`Question: ${nextQuestion}`);
     const answer = readlineSync.question('Your answer: ');
     if (correctAnswer !== answer) {
-      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${name}!`);
+      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
+      console.log(`Let's try again, ${name}!`);
       return;
     }
     console.log('Correct!');
