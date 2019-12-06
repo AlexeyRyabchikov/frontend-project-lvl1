@@ -7,8 +7,8 @@ const maxDigitForGenerateRandom = 1000;
 const minDigitForGenerateRandom = 0;
 const isPrime = (question) => {
   if (question < 2) return false;
-  const sqrtQestion = Math.floor(Math.sqrt(question)) + 1;
-  for (let i = 2; i < sqrtQestion; i += 1) {
+  const sqrtQuestion = Math.floor(Math.sqrt(question)) + 1;
+  for (let i = 2; i < sqrtQuestion; i += 1) {
     if (question % i === 0) {
       return false;
     }
