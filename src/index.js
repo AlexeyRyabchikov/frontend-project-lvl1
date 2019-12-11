@@ -27,5 +27,4 @@ export default (description, getAnswerQuestion) => {
     iter(counter + 1);
   };
   iter(0);
-  return;
 };
