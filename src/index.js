@@ -26,5 +26,6 @@ export default (description, getAnswerQuestion) => {
     console.log('Correct!');
     iter(counter + 1);
   };
-  return iter(0);
+  iter(0);
+  return;
 };

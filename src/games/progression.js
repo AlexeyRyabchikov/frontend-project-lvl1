@@ -13,8 +13,8 @@ const progressionLength = 9;
 const getQuestion = (first, step, counter, hiddenElementIndex) => {
   let result = '';
   for (let i = 0; i <= counter; i += 1) {
-    if (i === hiddenElementIndex) result = `${result}${'.. '}`;
-    else result = `${result}${first + step * i} `;
+    if (i === hiddenElementIndex) result = `${result}${' ..'}`;
+    else result = `${result} ${first + step * i}`;
   }
   return result;
 };
