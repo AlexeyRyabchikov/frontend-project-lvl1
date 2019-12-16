@@ -7,16 +7,17 @@ const maxDigitForGenerateRandom = 100;
 const minDigitForGenerateRandom = 0;
 const maxDigitForStep = 5;
 const minDigitForStep = 1;
-const minDigitHiddenElementIndex = 0;
-const maxDigitHiddenElementIndex = 9;
 const progressionLength = 9;
+const minDigitHiddenElementIndex = 0;
+const maxDigitHiddenElementIndex = progressionLength;
+
 const getQuestion = (first, step, counter, hiddenElementIndex) => {
   let result = '';
   for (let i = 0; i <= counter; i += 1) {
     if (i === hiddenElementIndex) result = `${result} ..`;
-    else result = `${result} ${first + step * i}`.trim();
+    else result = `${result} ${first + step * i}`;
   }
-  return result;
+  return result.trim();
 };
 const getAnswerQuestion = () => {
   const first = generateRandom(minDigitForGenerateRandom, maxDigitForGenerateRandom);
